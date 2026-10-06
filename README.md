@@ -1,4 +1,4 @@
-# proj_itp_terreno
+# proj-terreno
 
 Projeto da disciplina ITP para geração procedural de mapas de terrenos aleatórios em C++.
 
@@ -10,40 +10,38 @@ O programa gera um mapa de altitudes usando o algoritmo **Diamond-Square** e o c
 
 ```
 src/
-├── cor.h                        # estrutura Cor (RGB)
+├── cor.h
 ├── sequencia/
-│   ├── sequencia.h              # sequência genérica (equivalente ao vector<>)
-│   └── sequencia_testes.cpp
+│   ├── sequencia.h
+│   └── sequencia.cpp
 ├── paleta/
-│   ├── paleta.h / paleta.cpp    # paleta de cores lida de arquivo .hex
-│   └── paleta_testes.cpp
+│   ├── paleta.h
+│   └── paleta.cpp
 ├── imagem/
-│   ├── imagem.h / imagem.cpp    # imagem com leitura/escrita PPM
-│   └── imagem_testes.cpp
+│   ├── imagem.h
+│   └── imagem.cpp
 ├── terreno/
-│   ├── terreno.h / terreno.cpp  # geração do mapa de altitudes
-│   └── terreno_testes.cpp
+│   ├── terreno.h
+│   └── terreno.cpp
 ├── exemplo/
-│   ├── exemplo.png              # exemplo de mapa gerado
+│   ├── exemplo.png
 │   ├── exemplo.ppm
 │   └── matrizAltitude.r16
 └── main/
-    ├── main.cpp                 # programa principal
-    ├── cores.hex                # paleta com 30 cores
-    └── cores_60.hex             # paleta com 60 cores
+    ├── main.cpp
+    ├── cores.hex
+    └── cores_60.hex
 ```
 
-## Compilação
-
-Dentro da pasta `src/main/`, compile todos os arquivos necessários:
+## Como compilar
 
 ```bash
+cd src/main
+
 g++ main.cpp ../paleta/paleta.cpp ../imagem/imagem.cpp ../terreno/terreno.cpp -o gerador
 ```
 
-## Como usar
-
-Execute o programa e siga as instruções:
+## Como executar
 
 ```bash
 ./gerador
@@ -51,13 +49,11 @@ Execute o programa e siga as instruções:
 
 O programa irá pedir:
 
-- **Paleta de cores**: 30 ou 60 cores
-- **Tamanho do mapa**: de 17×17 até 1025×1025
-- **Semente**: número inteiro — a mesma semente sempre gera o mesmo terreno
-- **Nome do arquivo de saída**: o mapa será salvo como `.ppm`
-
-A imagem gerada pode ser visualizada com a extensão [PPM Viewer para VS Code](https://marketplace.visualstudio.com/items?itemName=ngtystr.ppm-pgm-viewer-for-vscode).
+- **Paleta de cores**: escolha entre 30 ou 60 cores
+- **Tamanho do mapa**: selecione um tamanho com opções de 17×17 até 1025×1025
+- **Semente**: digite um número inteiro (a mesma semente sempre gera o mesmo terreno)
+- **Arquivo de saída**: digite um nome para o arquivo em que o mapa será salvo
 
 ## Dependências
 
-Biblioteca padrão do C++.
+A imagem gerada pode ser visualizada com a extensão [PPM Viewer para VS Code](https://marketplace.visualstudio.com/items?itemName=ngtystr.ppm-pgm-viewer-for-vscode).
