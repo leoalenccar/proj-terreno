@@ -1,14 +1,3 @@
-// ============================================================
-// Arquivo: imagem.h
-// Descrição: declaração da classe "Imagem",
-// estrutura que representa uma imagem 2D baseada em pixels,
-// permitindo manipulação e leitura/escrita no formato PPM
-// Autor 1: Leonardo Alencar de Aquino
-// Autor 2: Arthur Victor Vieira Almeida
-// Data: dezembro de 2025
-// Disciplina: Introdução às Técnicas de Programação
-// ============================================================
-
 #ifndef IMAGEM_H
 #define IMAGEM_H
 
@@ -20,10 +9,7 @@ using Pixel = Cor;
 
 class Imagem
 {
-    // dimensões da imagem
     int altura, largura;
-
-    // matriz dinâmica de pixels (array de ponteiros)
     Pixel **pixels;
 
     // aloca memória para a matriz de pixels
@@ -33,16 +19,12 @@ class Imagem
     void limpar();
 
 public:
-    // construtor: cria uma imagem com dimensões dadas
     Imagem(int alt = 0, int larg = 0);
 
-    // destrutor: libera memória
     ~Imagem();
 
-    // retorna a largura da imagem
     int obterLargura();
 
-    // retorna a altura da imagem
     int obterAltura();
 
     // altera a cor de um pixel (x, y)

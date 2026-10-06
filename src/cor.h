@@ -4,7 +4,7 @@
 
 struct Cor
 {
-    unsigned char r, g, b; // unsigned char vao de 0 a 255
+    unsigned char r, g, b;
 };
 
 #endif

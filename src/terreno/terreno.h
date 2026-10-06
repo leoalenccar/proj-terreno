@@ -1,15 +1,3 @@
-// ============================================================
-// Arquivo: terreno.h
-// Descrição: declaração da classe "Terreno",
-// estrutura que representa um mapa de alturas (heightmap),
-// permitindo geração de terreno usando o algoritmo
-// diamond-square e conversão para imagem
-// Autor 1: Leonardo Alencar de Aquino
-// Autor 2: Arthur Victor Vieira Almeida
-// Data: dezembro de 2025
-// Disciplina: Introdução às Técnicas de Programação
-// ============================================================
-
 #ifndef TERRENO_H
 #define TERRENO_H
 
@@ -18,28 +6,17 @@
 
 class Terreno
 {
-    // expoente usado para calcular dimensões (2^n + 1)
     int expoente;
-
-    // dimensões do mapa
     int altura, largura;
-
-    // matriz dinâmica que armazena as alturas do terreno
     int **mapa;
-
-    // semente inicial (permite reproduzir o mesmo terreno)
     unsigned int sementeInicial;
-
-    // semente atual usada pelo gerador pseudoaleatório
     unsigned int semente;
-
-    // limites de altura do terreno
     int altMinimo, altMaximo;
 
-    // aloca memória para o mapa de alturas
+    // aloca memória para o mapa
     void alocarEspaco(int alt, int larg);
 
-    // libera memória do mapa
+    // libera memória
     void limpar();
 
     // calcula 2^n + 1
@@ -60,10 +37,10 @@ class Terreno
 
 public:
 
-    // construtor: inicializa o terreno com parâmetros dados
+    // construtor
     Terreno(int exp = 0, int seed = 1, int min = 0, int max = 100);
 
-    // destrutor: libera memória
+    // destrutor
     ~Terreno();
 
     // retorna largura do terreno
@@ -87,22 +64,22 @@ public:
     // insere uma altura no mapa
     void inserirAltura(int lin, int col, int alt);
 
-    // gera valor aleatório dentro do intervalo global [altMinimo, altMaximo]
+    // gera valor aleatório dentro do intervalo [altMinimo, altMaximo]
     int aleatorio();
 
     // gera valor aleatório dentro de um intervalo específico
     int aleatorio(int minimo, int maximo);
 
-    // gera o mapa completo usando diamond-square
+    // gera o mapa usando diamond-square
     void gerarMapa();
 
     // converte o terreno em imagem usando uma paleta de cores
     Imagem carregarTerreno(std::string arquivoPALETA, float fator, int dist, int map);
 
-    // salva o mapa de alturas em arquivo
+    // salva o mapa em arquivo
     bool salvarHeightMap(std::string arquivo);
 
-    // lê um mapa de alturas de arquivo
+    // lê um mapa de um arquivo
     bool lerHeightMap(std::string arquivo);
 };
 
